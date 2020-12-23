@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <TitleBar />
     <div>
       <Logo />
       <h1 class="title">14ers-info-nuxt</h1>
@@ -26,7 +27,12 @@
 </template>
 
 <script>
-export default {}
+import TitleBar from '@/components/TitleBar'
+export default {
+  components: {
+    TitleBar,
+  },
+}
 </script>
 
 <style>
