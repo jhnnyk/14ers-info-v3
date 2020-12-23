@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <p>
-      Welcome to <router-link :to="{ name: 'home' }">14ers.info</router-link>,
+      Welcome to <router-link :to="{ name: 'index' }">14ers.info</router-link>,
       your source for current weather and the weather forecast for Colorado's
       14ers.
     </p>

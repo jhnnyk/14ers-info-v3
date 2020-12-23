@@ -3,8 +3,8 @@
     <TitleBar />
     <main>
       <ul>
-        <li v-for="mtn in mtns" :key="mtn.mtn">
-          {{ mtn.mtn }}
+        <li v-for="mtn in mtns" :key="mtn.slug">
+          {{ mtn.name }}
         </li>
       </ul>
       <Nuxt />
@@ -20,9 +20,13 @@ export default {
     TitleBar,
   },
 
+  created() {
+    this.$store.dispatch('mtns/getMtns')
+  },
+
   computed: {
     mtns() {
-      return this.$store.state.store.mtns
+      return this.$store.state.mtns.all
     },
   },
 }
