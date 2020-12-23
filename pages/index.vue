@@ -1,69 +1,22 @@
 <template>
-  <div class="container">
-    <TitleBar />
-    <div>
-      <Logo />
-      <h1 class="title">14ers-info-nuxt</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="home">
+    <p>
+      Welcome to <router-link :to="{ name: 'home' }">14ers.info</router-link>,
+      your source for current weather and the weather forecast for Colorado's
+      14ers.
+    </p>
+    <p>
+      Please select a mountain to see the current weather and the weather
+      forecast.
+    </p>
+    <p>
+      Need help deciding? Maybe try Colorado's highest peak,
+      <nuxt-link to="/mt_elbert">Mt. Elbert</nuxt-link>; or perhaps the iconic
+      <nuxt-link to="/pikes_peak">Pikes Peak</nuxt-link>!
+    </p>
   </div>
 </template>
 
 <script>
-import TitleBar from '@/components/TitleBar'
-export default {
-  components: {
-    TitleBar,
-  },
-}
+export default {}
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
