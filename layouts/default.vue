@@ -18,8 +18,18 @@ export default {
     MtnList,
   },
 
-  created() {
-    this.$store.dispatch('mtns/getMtns')
+  watch: {
+    $route() {
+      this.$store.dispatch('mtns/setCurrentMtn', this.$route.params.slug)
+    },
+  },
+
+  async created() {
+    await this.$store.dispatch('mtns/getMtns')
+
+    if (this.$route.params.slug) {
+      this.$store.dispatch('mtns/setCurrentMtn', this.$route.params.slug)
+    }
   },
 }
 </script>

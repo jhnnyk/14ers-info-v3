@@ -2,6 +2,7 @@ import { db } from '@/firebase'
 
 export const state = () => ({
   all: [],
+  currentMtn: null,
 })
 
 export const getters = {
@@ -26,6 +27,9 @@ export const mutations = {
   setMtns: (state, mtns) => {
     state.all = mtns
   },
+  setCurrentMtn: (state, mtn) => {
+    state.currentMtn = mtn
+  },
 }
 
 export const actions = {
@@ -46,5 +50,16 @@ export const actions = {
     })
 
     commit('setMtns', mtnList)
+  },
+
+  setCurrentMtn: async ({ dispatch, commit, state }, slug) => {
+    const currentMtn = await state.all.find((m) => m.slug === slug)
+    commit('setCurrentMtn', currentMtn)
+    // if (currentMtn) {
+    //   commit('setForecastLoading', true)
+    //   dispatch('getForecast', currentMtn)
+    //   commit('setCurrentWeatherLoading', true)
+    //   dispatch('getCurrentWeather', currentMtn)
+    // }
   },
 }

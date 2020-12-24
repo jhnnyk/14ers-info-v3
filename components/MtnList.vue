@@ -5,7 +5,7 @@
         <h3>{{ range.name }}</h3>
         <ul>
           <li v-for="mtn in range.mtns" :key="mtn.slug">
-            <nuxt-link :to="{ name: 'index', params: { ...mtn } }">
+            <nuxt-link :to="{ name: 'slug', params: { ...mtn } }">
               {{ mtn.name }}
             </nuxt-link>
           </li>
